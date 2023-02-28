@@ -1,0 +1,45 @@
+
+$warning: #31df0e;
+
+@import './bootstrap/scss/bootstrap.scss';
+
+
+
+
+div{
+    background-color: silver;
+}
+
+// variable
+$mofak:gold;
+h1{
+    color :$mofak;
+}
+
+// mixin
+
+@mixin demo($color1:aqua, $color2:antiquewhite){
+    padding: 1rem;
+    margin: 1rem;
+    color: $color1;
+    background-color: $color2;
+    height: 200px;
+}
+
+// nesting
+body{
+    div{
+width: 200px;
+height: 200px;
+        h1{
+border: 2px solid black;
+
+@include demo;
+        }
+
+        p{
+background-color: lightgray;
+@include demo($color1:red, $color2:blue);
+        }
+    }
+}
